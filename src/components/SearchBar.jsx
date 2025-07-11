@@ -1,14 +1,17 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { cityList } from "../variables";
 
-function SearchBar({ onSearch }) {
+function SearchBar() {
   const [searchTerm, setSearchTerm] = useState("");
+  const navigate = useNavigate();
 
   const handleCityChange = (e) => {
     const selectedCity = e.target.value;
     setSearchTerm(selectedCity);
     if (selectedCity) {
-      onSearch(selectedCity);
+      // Navigate to the city detail page
+      navigate(`/city/${encodeURIComponent(selectedCity)}`);
     }
   };
 

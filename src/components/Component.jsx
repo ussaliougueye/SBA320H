@@ -1,13 +1,24 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./Component.css";
 import { useWeatherApi } from "../hooks/useWeatherApi";
 
-function Cadre({ city = "Columbus" }) {
+function Cadre({ city = "Columbus", clickable = true }) {
   const { weatherData, loading, error } = useWeatherApi(city);
+  const navigate = useNavigate();
+
+  const handleCardClick = () => {
+    if (clickable) {
+      navigate(`/city/${encodeURIComponent(city)}`);
+    }
+  };
 
   if (loading) {
     return (
-      <div className="weather-card">
+      <div
+        className={`weather-card ${clickable ? "clickable" : ""}`}
+        onClick={handleCardClick}
+      >
         <div className="loading">Loading weather datas...</div>
       </div>
     );
@@ -15,7 +26,10 @@ function Cadre({ city = "Columbus" }) {
 
   if (error) {
     return (
-      <div className="weather-card">
+      <div
+        className={`weather-card ${clickable ? "clickable" : ""}`}
+        onClick={handleCardClick}
+      >
         <div className="error">Error: {error}</div>
       </div>
     );
@@ -23,7 +37,10 @@ function Cadre({ city = "Columbus" }) {
 
   if (!weatherData) {
     return (
-      <div className="weather-card">
+      <div
+        className={`weather-card ${clickable ? "clickable" : ""}`}
+        onClick={handleCardClick}
+      >
         <div className="no-data">No weather data available right now</div>
       </div>
     );
@@ -66,7 +83,10 @@ function Cadre({ city = "Columbus" }) {
   };
 
   return (
-    <div className="weather-card">
+    <div
+      className={`weather-card ${clickable ? "clickable" : ""}`}
+      onClick={handleCardClick}
+    >
       <h2 id="city">{name}</h2>
       <p id="date">{date}</p>
 
