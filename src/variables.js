@@ -12,7 +12,7 @@ export let cityList = [
     "Ottawa",
     "Guadalajara",
     "Monterrey",
-    "Tijuana",
+    "Bamako",
     "São Paulo",
     "Rio de Janeiro",
     "Buenos Aires",

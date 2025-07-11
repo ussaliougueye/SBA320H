@@ -78,7 +78,7 @@ function Cadre({ city = "Columbus" }) {
       <div className="details">
         <div>Feels like {Math.round(feelslike_c)}°C</div>
         <div>Humidity {humidity}%</div>
-        <div>{Math.round(temp_f)}°F</div>
+        <div>{Math.round(temp_f)}° F</div>
       </div>
     </div>
   );
