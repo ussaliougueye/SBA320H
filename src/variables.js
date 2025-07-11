@@ -21,7 +21,7 @@ export let cityList = [
     "Santiago",
     "Caracas",
     "Quito",
-    "La Paz",
+    "Dayton",
     "Montevideo",
     "London",
     "Paris",
