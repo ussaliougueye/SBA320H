@@ -24,7 +24,7 @@ function Cadre({ city = "Columbus" }) {
   if (!weatherData) {
     return (
       <div className="weather-card">
-        <div className="no-data">No weather data available</div>
+        <div className="no-data">No weather data available right now</div>
       </div>
     );
   }
