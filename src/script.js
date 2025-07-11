@@ -41,7 +41,7 @@ document.getElementById("cityy").addEventListener("change", (event) => {
   
       return data;
     } catch (error) {
-      console.error("Failed to fetch weather data:", error);
+      console.error("Fail to fetch weather data:", error);
     }
   }
   
