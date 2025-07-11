@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather API Test</title>
+  </head>
+  <body>
+    <h1>Weather API Test</h1>
+    <button onclick="testAPI()">Test API</button>
+    <div id="result"></div>
+
+    <script>
+      async function testAPI() {
+        const API_KEY = "6fa07ab67bd148ac92c173725250206";
+        const url = `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=New York`;
+
+        try {
+          const response = await fetch(url);
+          console.log("Response status:", response.status);
+          console.log("Response headers:", response.headers);
+
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+
+          const data = await response.json();
+          console.log("API Response:", data);
+          document.getElementById("result").innerHTML = `
+                    <h3>Success!</h3>
+                    <p>City: ${data.location.name}</p>
+                    <p>Temperature: ${data.current.temp_c}°C</p>
+                    <p>Condition: ${data.current.condition.text}</p>
+                `;
+        } catch (error) {
+          console.error("Error:", error);
+          document.getElementById("result").innerHTML = `
+                    <h3>Error:</h3>
+                    <p>${error.message}</p>
+                `;
+        }
+      }
+    </script>
+  </body>
+</html>

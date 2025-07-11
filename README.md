@@ -1,14 +1,7 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# SBA320H
-# SBA320H
+Fetches real-time weather data from WeatherAPI using your API key for any city worldwide
+Displays current weather conditions including temperature, humidity, and weather description in a card format
+Allows users to search for specific cities using a dropdown with 80+ predefined cities from your variables.js file
+Shows a main weather card for the selected city with detailed weather information
+Presents a scrolling carousel with 100 cities showing live weather data that automatically cycles through different cities
+Updates dynamically - when you select a new city, the main card immediately shows the weather for that location
+In essence: A global weather dashboard that displays live weather data for cities worldwide with an interactive search and an auto-scrolling showcase of 100 cities

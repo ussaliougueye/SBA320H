@@ -1,0 +1,55 @@
+.weather-card {
+  font-family: "Arial", sans-serif;
+  text-align: center;
+  color: white;
+  background: linear-gradient(to bottom, #2193b0, #6dd5ed);
+  padding: 20px;
+  border-radius: 20px;
+  width: 400px;
+  margin: 25px auto;
+}
+
+.icon {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin: 20px auto;
+}
+
+.sun {
+  width: 60px;
+  height: 60px;
+  background: yellow;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 20px;
+  box-shadow: 0 0 15px rgba(255, 255, 0, 0.6);
+}
+
+.cloud {
+  width: 80px;
+  height: 50px;
+  background: white;
+  border-radius: 50px;
+  position: absolute;
+  bottom: 0;
+  left: 10px;
+  opacity: 0.9;
+}
+
+.temperature {
+  font-size: 64px;
+  margin: 10px 0;
+}
+
+.condition {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.details {
+  display: flex;
+  justify-content: space-around;
+  font-size: 18px;
+}
