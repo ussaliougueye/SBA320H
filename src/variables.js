@@ -33,7 +33,7 @@ export let cityList = [
     "Vienna",
     "Copenhagen",
     "Stockholm",
-    "Oslo",
+    "Nuackchott",
     "Dublin",
     "Lisbon",
     "Warsaw",
