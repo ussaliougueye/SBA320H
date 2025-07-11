@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API Test</title>
+  </head>
+  <body>
+    <h1>Weather API Test</h1>
+    <button onclick="testAPI()">Test Current API Key</button>
+    <div id="result"></div>
+
+    <script>
+      async function testAPI() {
+        const API_KEY = "bda265604ef64666b7a43601251107";
+        const url = `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=New York`;
+
+        try {
+          console.log("Testing API with key:", API_KEY);
+          console.log("URL:", url);
+
+          const response = await fetch(url);
+          console.log("Response status:", response.status);
+
+          if (!response.ok) {
+            const errorText = await response.text();
+            console.error("Error:", errorText);
+            document.getElementById("result").innerHTML = `
+                        <h3>❌ API Error:</h3>
+                        <p>Status: ${response.status}</p>
+                        <p>Error: ${errorText}</p>
+                    `;
+            return;
+          }
+
+          const data = await response.json();
+          console.log("Success:", data);
+          document.getElementById("result").innerHTML = `
+                    <h3>✅ API Working!</h3>
+                    <p>City: ${data.location.name}</p>
+                    <p>Temperature: ${data.current.temp_c}°C</p>
+                    <p>Condition: ${data.current.condition.text}</p>
+                `;
+        } catch (error) {
+          console.error("Network error:", error);
+          document.getElementById("result").innerHTML = `
+                    <h3>❌ Network Error:</h3>
+                    <p>${error.message}</p>
+                `;
+        }
+      }
+    </script>
+  </body>
+</html>

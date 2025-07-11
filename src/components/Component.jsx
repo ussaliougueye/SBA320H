@@ -8,7 +8,7 @@ function Cadre({ city = "Columbus" }) {
   if (loading) {
     return (
       <div className="weather-card">
-        <div className="loading">Loading weather data...</div>
+        <div className="loading">Loading weather datas...</div>
       </div>
     );
   }
